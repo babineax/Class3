@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+    <EditText
+
+        android:inputType="textPersonName"
+        android:id="@+id/edt_firstname"
+        android:hint="First Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_below="@+id/edt_firstname"
+
+        android:inputType="textPersonName"
+        android:id="@+id/edt_lastname"
+        android:hint="Last Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/edt_lastname"
+        android:id="@+id/edt_email"
+        android:hint="Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+
+        android:inputType="phone"
+        android:layout_below="@id/edt_email"
+        android:id="@+id/edt_phone"
+        android:hint="Phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+
+        android:inputType="textPassword"
+
+        android:layout_below="@+id/edt_phone"
+        android:id="@+id/edt_password"
+        android:hint="Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+
+        android:inputType=""
+        android:layout_below="@+id/edt_password"
+        android:id="@+id/edt_confirm_password"
+        android:hint="Confirm Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_marginBottom="12dp"
+        android:text="Sign Up"
+        android:id="@+id/btn_signup"
+        android:layout_alignParentBottom="true"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
