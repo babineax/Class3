@@ -1,15 +1,11 @@
 package com.dev.class3;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Patterns;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
-import java.util.regex.Pattern;
 
 import static com.dev.class3.Utils.emailChecker;
 import static com.dev.class3.Utils.isTextEntered;
@@ -50,7 +46,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if(isTextEntered(edtFirstName)&&isTextEntered(edtLastName)&&isTextEntered(edtEmail)&&isTextEntered(edtPhone)&&isTextEntered(edtPassword)&&isTextEntered(edtConfirmPassword)
                     &&emailChecker(edtEmail)&&phoneChecker(edtPhone)&&passwordChecker(edtPassword,edtConfirmPassword)){
 
+                User user = new User();
+                user.setId(0);
+                user.setFirstName(edtFirstName.getText().toString());
+                user.setLastName(edtLastName.getText().toString());
+                user.setEmail(edtEmail.getText().toString());
+                user.setPhone(edtPhone.getText().toString());
+                user.setPassword(edtPassword.getText().toString());
+
+
                 Intent i=new Intent(MainActivity.this,LoginActivity.class);
+
+                i.putExtra("data", user);
+
+
+
+
+
+
                 startActivity(i);
 
             }
