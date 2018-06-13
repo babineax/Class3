@@ -3,6 +3,7 @@ package com.dev.class3;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,7 +27,7 @@ public class DisplayActivity extends AppCompatActivity {
 
 
         Intent i = getIntent();
-        User us = (User) i.getSerializableExtra("data");
+        User us = i.getParcelableExtra("data");
         if (us != null) {
             txtFirstName.setText(us.getFirstName());
             txtLastName.setText(us.getLastName());
@@ -36,6 +37,19 @@ public class DisplayActivity extends AppCompatActivity {
             imgProfile.setImageResource(R.drawable.imagetest);
 
         }
-      
+        String[] values = new String[]{"Java",
+                "Php",
+                "C++",
+                "C#",
+                "Html",
+                "Golang",
+                "D"
+        };
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, android.R.id.text1, values);
+
+
+
     }
 }

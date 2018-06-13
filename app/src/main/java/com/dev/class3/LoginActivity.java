@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
 
         data = getIntent();
 
-        user = (User) data.getSerializableExtra("data");
+        user = data.getParcelableExtra("data");
 
         email = user.getEmail();
         password = user.getPassword();
