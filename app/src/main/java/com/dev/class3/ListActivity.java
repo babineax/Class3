@@ -2,7 +2,10 @@ package com.dev.class3;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -54,6 +57,26 @@ public class ListActivity extends AppCompatActivity {
         ListAdapter listAdapter = new ListAdapter(ListActivity.this, R.layout.itemlistrow, generateContacts());
 
         lstLanguages.setAdapter(listAdapter);
+
+        lstLanguages.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+                Toast.makeText(ListActivity.this, " Clicked " + generateContacts().get(position).getFirstName(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        lstLanguages.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(ListActivity.this, "Long Clicked " + generateContacts().get(position).getFirstName(), Toast.LENGTH_SHORT).show();
+
+                return false;
+            }
+        });
+
+
+
 
 //
 //
